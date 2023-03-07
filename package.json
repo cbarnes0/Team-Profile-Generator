@@ -1,0 +1,22 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "team profile generator for fullstack bootcamp",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbarnes0/Team-Profile-Generator.git"
+  },
+  "author": "Carson Barnes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbarnes0/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/cbarnes0/Team-Profile-Generator#readme"
+}
