@@ -84,21 +84,23 @@ function addMore() {
             type: 'list',
             name: "add",
             message: "Do you want to add more team members?",
-            choices: ["Manager", "Engineer", "Intern", "No More"]
+            choices: ["Engineer", "Intern", "No More"]
         },
     ])
     .then(data => {
-        console.log("Data: ", data);
-
-        // based on users choice we want to setup a SELECT / Conditional Statement
-
-        if(data.add == "Engineer") {
-            console.log("Createing new Egineer");
-            // run the logic to create a new Engineer Instance --> add to team
+        switch (data.add) {
+            case "Engineer":
+                addEngineer();
+                break;
+            case "Intern":
+                addIntern();
+                break;
+            default:
+                finishTeam();
         }
     })
     .catch(error => {
         throw error;
     });
-}
+};
 
