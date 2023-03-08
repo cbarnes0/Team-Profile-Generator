@@ -5,13 +5,7 @@ const Intern = require('./lib/Intern');
 const fs = require("fs");  
 const Employee = require('./lib/Employee');
 
-
-
 const team = [];
-
-// what is the minumim info we need (?)
-// name , id, email , unknown(?)
-// How do we gather that info(?) --> inquirer
 
 
 function start() {
@@ -43,16 +37,7 @@ function start() {
     ])
     .then(data => {
         console.log("Data: ", data);
-        
-        // now that we have data... what do we do with it(?)
-        /*   const newUserData = {
-            name: data.name,
-            id: data.ID, 
-            email: data.email
-        }  // --> literal object notation
-        */
-       
-       
+    
        // Create a New INSTANCE of an EMPLOYEE object
        const newEmployee = new Manager(data.name, data.ID, data.email, data.officeNumber);
        
@@ -60,9 +45,7 @@ function start() {
        
        // Add new team memeber
        team.push(newEmployee);
-       
-       console.log("Team: ", team);
-       
+
        // Ok now What(?) ... 
        // we present the user with another question set
        addMore();
@@ -70,12 +53,9 @@ function start() {
     })
     .catch(error => {
         throw error
-    })
+    });
     
-}
-
-start()
-
+};
 
 function addMore() {
     
@@ -104,3 +84,78 @@ function addMore() {
     });
 };
 
+function addEngineer() {
+    console.log('Adding New Engineer');
+
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the Engineer?',
+        },
+        {
+            type: 'input',
+            name: "ID",
+            message: "Enter employee ID"
+        },
+        {
+            type: 'input',
+            name: "email",
+            message: "Enter your email address"
+        },
+        {
+            type: 'input',
+            name: "github",
+            message: "Enter your Github username"
+        },
+    ]).then(data => {
+        console.log("Data: ", data);
+        const engineer = new Engineer(data.name, data.ID, data.email, data.github);
+        team.push(engineer);
+        addMore();
+    }).catch(error => {
+        throw error
+    });
+};
+
+function addIntern() {
+    console.log('Adding New Intern');
+
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the Intern?',
+        },
+        {
+            type: 'input',
+            name: "ID",
+            message: "Enter inter ID"
+        },
+        {
+            type: 'input',
+            name: "email",
+            message: "Enter your email address"
+        },
+        {
+            type: 'input',
+            name: "school",
+            message: "Enter your school"
+        },
+    ]).then(data => {
+        console.log("Data: ", data);
+        const intern = new Intern(data.name, data.ID, data.email, data.school);
+        team.push(intern);
+        addMore();
+    }).catch(error => {
+        throw error
+    });
+};
+
+function finishTeam() {
+    console.log('Finish Building the Team');
+
+    // ???
+};
+
+start();
