@@ -24,6 +24,12 @@ To install this code first you must clone the repository. Run ```npm i``` follow
 
 ## Screenshots
 
+![Screenshot1](screenshots/Screenshot1.png)
+
+![Screenshot2](screenshots/Screenshot2.png)
+
+![Screenshot3](screenshots/Screenshot3.png)
+
 ## Links
 
 - Repository: https://github.com/cbarnes0/Team-Profile-Generator
