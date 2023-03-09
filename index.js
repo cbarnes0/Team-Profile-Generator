@@ -21,8 +21,8 @@ function start() {
         },
         {
             type: 'input',
-            name: "ID",
-            message: "What is the Manager's ID?"
+            name: "id",
+            message: "What is the Manager's id?"
         },
         {
             type: 'input',
@@ -39,7 +39,7 @@ function start() {
         console.log("Data: ", data);
     
        // Create a New INSTANCE of an EMPLOYEE object
-       const newEmployee = new Manager(data.name, data.ID, data.email, data.officeNumber);
+       const newEmployee = new Manager(data.name, data.id, data.email, data.officeNumber);
        
        console.log("Employee: ", newEmployee);
        
@@ -95,8 +95,8 @@ function addEngineer() {
         },
         {
             type: 'input',
-            name: "ID",
-            message: "Enter employee ID"
+            name: "id",
+            message: "Enter employee id"
         },
         {
             type: 'input',
@@ -110,7 +110,7 @@ function addEngineer() {
         },
     ]).then(data => {
         console.log("Data: ", data);
-        const engineer = new Engineer(data.name, data.ID, data.email, data.github);
+        const engineer = new Engineer(data.name, data.id, data.email, data.github);
         team.push(engineer);
         addMore();
     }).catch(error => {
@@ -129,8 +129,8 @@ function addIntern() {
         },
         {
             type: 'input',
-            name: "ID",
-            message: "Enter inter ID"
+            name: "id",
+            message: "Enter inter id"
         },
         {
             type: 'input',
@@ -144,7 +144,7 @@ function addIntern() {
         },
     ]).then(data => {
         console.log("Data: ", data);
-        const intern = new Intern(data.name, data.ID, data.email, data.school);
+        const intern = new Intern(data.name, data.id, data.email, data.school);
         team.push(intern);
         addMore();
     }).catch(error => {
@@ -155,7 +155,9 @@ function addIntern() {
 function finishTeam() {
     console.log('Finish Building the Team');
 
+    const builtTeam = buildsite(team);
     // ???
+    fs.writeFile('index.html', builtTeam);
 };
 
 start();
