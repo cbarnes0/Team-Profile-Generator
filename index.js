@@ -157,7 +157,7 @@ function finishTeam() {
 
     const builtTeam = buildsite(team);
     // ???
-    fs.writeFile('index.html', builtTeam);
+    fs.writeFileSync('./dist/index.html', buildsite(team), 'utf-8');
 };
 
 start();
