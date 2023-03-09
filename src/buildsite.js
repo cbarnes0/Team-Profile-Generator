@@ -45,7 +45,7 @@ function buildsite(team) {
         html.push(engineerHtml);
     }
     const generateIntern = intern => {
-        console.log(engineer);
+        console.log(intern);
         // create internHtml
         let internHtml = `<div class="col">
         <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
@@ -56,7 +56,7 @@ function buildsite(team) {
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">Name: ${intern.name}</li>
-                    <li class="list-group-item">ID: ${intnern.id}</li>
+                    <li class="list-group-item">ID: ${intern.id}</li>
                     <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
                     <li class="list-group-item">School: ${intern.school}</li>
                   </ul>
